@@ -11,6 +11,13 @@ class Api
         );
     }
 
+    public static function testData()
+    {
+        return json_decode(
+            file_get_contents('php://input')
+        );
+    }
+
     public static function respond200($response, $responseMessage)
     {
         $responseMessage = json_encode(
