@@ -1,0 +1,18 @@
+{
+    "name": "nicmaxcarter/apitool",
+    "description": "basic functions to respond on top of slim framework",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Nicmaxcarter\\ApiTool\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Max Carter",
+            "email": "nicmaxcarter@gmail.com"
+        }
+    ],
+    "require": {}
+}
