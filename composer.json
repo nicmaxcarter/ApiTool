@@ -15,5 +15,7 @@
             "email": "nicmaxcarter@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "nicmaxcarter/apiauthmiddleware": "dev-master"
+    }
 }

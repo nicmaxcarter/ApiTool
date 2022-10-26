@@ -2,6 +2,8 @@
 
 namespace Nicmaxcarter\ApiTool;
 
+use Nicmaxcarter\ApiAuthMiddleware\Middleware as Auth;
+
 class Api
 {
     public static function getData()
@@ -73,5 +75,30 @@ class Api
         $hex = bin2hex(random_bytes(8));
 
         return $str . $hex;
+    }
+
+    public static function AuthPostData(
+        $secretNumber = null,
+        $addData = null
+    )
+    {
+        $auth = new Auth($secretNumber);
+
+        //echo '<pre>';
+        //var_dump($auth->getSecret());
+        //exit;
+
+        // set data array to match addData
+        $data = $addData;
+
+        // if we do not have addData
+        if(is_null($addData))
+            // make an empty array
+            $data = [];
+
+        // add the secret to the array
+        $data['secret'] = $auth->getSecret();
+
+        return json_encode($data);
     }
 }
